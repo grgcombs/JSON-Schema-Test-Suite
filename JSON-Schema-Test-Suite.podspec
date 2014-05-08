@@ -14,15 +14,14 @@ Pod::Spec.new do |s|
     The conversion of the JSON objects into tests within your test framework of choice is still the job of the validator implementor.
   }
 
-# s.source_files = '{tests,remotes}/{**,*.json}'
+  # This optional test is virtually impossible to pass when parsed to NSNumber 
   s.ios.exclude_files = "tests/{draft3,draft4}/optional/zeroTerminatedFloats.json"
   s.osx.exclude_files = "tests/{draft3,draft4}/optional/zeroTerminatedFloats.json"
 
+# s.source_files = '{tests,remotes}/{**,*.json}'
   s.resource_bundles = { 'JSON-Schema-Test-Suite' => '{tests,remotes}/{**,*.json}',
                          'JSON-Schema-Test-Suite-v4' => 'tests/draft4/{**,*.json}' }
                          
-  s.exclude_files = "tests/draft4/optional/zeroTerminatedFloats.json"
-
   s.ios.platform = :ios, '7.0'
   s.ios.deployment_target = '7.0'
   s.osx.platform = :osx, '10.9'
