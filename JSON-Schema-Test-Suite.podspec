@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.osx.exclude_files = "tests/{draft3,draft4}/optional/zeroTerminatedFloats.json"
 
 # s.source_files = '{tests,remotes}/{**,*.json}'
-  s.resource_bundles = { 'JSON-Schema-Test-Suite' => '{tests,remotes}/{**,*.json}',
-                         'JSON-Schema-Test-Suite-v4' => 'tests/draft4/{**,*.json}' }
+  s.preserve_paths = "{tests,remotes}"
+  s.resource_bundles = { 'JSON-Schema-Test-Suite' => '{tests,remotes}'}
                          
   s.ios.platform = :ios, '7.0'
   s.ios.deployment_target = '7.0'
